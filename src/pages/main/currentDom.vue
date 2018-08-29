@@ -22,7 +22,7 @@
     data() {
       return {
         course: [
-          {coursename: "数学", id: "11"},
+          {coursename: "数学", id: "1111"},
           {coursename: "语文", id: "2"},
           {coursename: "英语", id: "3"},
           {coursename: "历史", id: "4"}
