@@ -1,0 +1,24 @@
+$--color-primary: #878ece;
+/*checkbox*/
+.el-tabs .el-checkbox__input.is-checked .el-checkbox__inner{
+	  background-color: #878ece;
+    border-color: #878ece;
+}
+.el-tabs .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner{
+	  background-color: #d1dbe5;
+    border-color: #d1dbe5;
+}
+.el-checkbox__input.is-focus .el-checkbox__inner{
+  	border-color:#878ece;
+}
+.el-checkbox .el-checkbox__inner:hover{
+  	border-color:#878ece;
+}
+
+.el-form-item .el-form-item__label{line-height: 36px;}
+.el-form-item .el-form-item__content{line-height: 36px;}
+.el-form-item .el-form-item__content .el-input__inner{height: 36px;}
+.input-with-select .el-input__inner{height: 36px;line-height: 36px;}
+.el-button{padding: 10px 20px;}
+.el-button--text{padding: 0!important;}
+.el-table{font-size: 12px!important;}
