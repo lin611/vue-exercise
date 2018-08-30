@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 Mock.mock('/api/books', {
   'books|1-10': [{
     'id|+1': 1,
-    'title': '@pick(["语文", "数学", " 英文", "历史"])',
+    'title': '@pick(["语文", "数学", " 英文", "历史1"])',
     'img': '@image(100x60, @color)',
     'price|1-100': 100
   }]
