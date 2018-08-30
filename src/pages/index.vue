@@ -25,8 +25,22 @@
             <el-menu-item index="/unrefreshedSearch">无刷新检索</el-menu-item>
             <el-menu-item index="/tabs">tabs切换效果</el-menu-item>
             <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
+            <el-menu-item index="/md5">md5加密</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>ElementUI</span>
+            </template>
+            <el-menu-item index="/dateTimePicker">日期时间选择器</el-menu-item>
+            <el-menu-item index="/parentValue">组件之间传值</el-menu-item>
+            <el-menu-item index="/basicOperation">基本操作</el-menu-item>
+            <el-menu-item index="/unrefreshedSearch">无刷新检索</el-menu-item>
+            <el-menu-item index="/tabs">tabs切换效果</el-menu-item>
+            <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
+            <el-menu-item index="/cascader">Cascader 级联选择器</el-menu-item>
+          </el-submenu>
+          <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-goods"></i>
               <span slot="title">财务</span>

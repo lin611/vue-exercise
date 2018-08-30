@@ -109,3 +109,163 @@ Mock.mock('/finance/promoterWithdrawalRecords?listStatus=3', {
     'overdue|0-1': 1
   }]
 });
+Mock.mock('/main/cascader', {
+  "data": [
+    {
+      "pcCode": "1111111111111",
+      "childCategory": [
+        {
+          "pcCode": "2222222222222222222",
+          "childCategory": [
+            {
+              "pcCode": "3333333333333333333",
+              "level": 3,
+              "ppcCode": "02596560724924956471",
+              "categoryName": "水果果果果"
+            }
+          ],
+          "level": 2,
+          "ppcCode": "02513410038505806773",
+          "categoryName": "二级分类"
+        }
+      ],
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "添加一级分类"
+    },
+    {
+      "pcCode": "02518503024429615194",
+      "childCategory": [
+        {
+          "pcCode": "02516845776212945814",
+          "childCategory": [
+            {
+              "pcCode": "02517529281392130592",
+              "level": 3,
+              "ppcCode": "02516845776212945814",
+              "categoryName": "三级分类五"
+            }
+          ],
+          "level": 2,
+          "ppcCode": "02518503024429615194",
+          "categoryName": "子分类五"
+        }
+      ],
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类五"
+    },
+    {
+      "pcCode": "02513703424362826429",
+      "childCategory": [
+        {
+          "pcCode": "02569213081690271638",
+          "level": 2,
+          "ppcCode": "02513703424362826429",
+          "categoryName": "测试二级分类1"
+        }
+      ],
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "测试一级分类1-编辑"
+    },
+    {
+      "pcCode": "02526043193550006406",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类九"
+    },
+    {
+      "pcCode": "02515614932375704003",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类四"
+    },
+    {
+      "pcCode": "02518876194798420088",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类六"
+    },
+    {
+      "pcCode": "02599121759050821348",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类十一"
+    },
+    {
+      "pcCode": "002",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类一"
+    },
+    {
+      "pcCode": "02520180726111822296",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类八"
+    },
+    {
+      "pcCode": "02520180724092929044",
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类七"
+    },
+    {
+      "pcCode": "20180720415070015",
+      "childCategory": [
+        {
+          "pcCode": "2018072041507387",
+          "level": 2,
+          "ppcCode": "20180720415070015",
+          "categoryName": "子分类十二"
+        }
+      ],
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类十二"
+    },
+    {
+      "pcCode": "2018072041507343",
+      "childCategory": [
+        {
+          "pcCode": "02520180725091939024",
+          "level": 2,
+          "ppcCode": "2018072041507343",
+          "categoryName": "子分类十三-2"
+        },
+        {
+          "pcCode": "2018072041507580",
+          "childCategory": [
+            {
+              "pcCode": "02520180725091801764",
+              "level": 3,
+              "ppcCode": "2018072041507580",
+              "categoryName": "三级分类十三-4"
+            },
+            {
+              "pcCode": "02520180724035515917",
+              "level": 3,
+              "ppcCode": "2018072041507580",
+              "categoryName": "三级分类十三-5"
+            },
+            {
+              "pcCode": "2018072042007991",
+              "level": 3,
+              "ppcCode": "2018072041507580",
+              "categoryName": "三级分类十三-1"
+            }
+          ],
+          "level": 2,
+          "ppcCode": "2018072041507343",
+          "categoryName": "子分类十三-1"
+        }
+      ],
+      "level": 1,
+      "ppcCode": "0",
+      "categoryName": "分类十三"
+    }
+  ],
+  "message": "success",
+  "status": 0
+});

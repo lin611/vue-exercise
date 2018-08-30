@@ -8,6 +8,9 @@ import basicOperation from '../pages/main/basicOperation.vue'   // 基本操作
 import unrefreshedSearch from '../pages/main/unrefreshedSearch.vue'   // 无刷新检索
 import tabs from '../pages/main/tabs/index.vue'   // tabs切换
 import currentDom from '../pages/main/currentDom.vue'   // 操作当前的DOM
+import md5 from '../pages/main/md5.vue'   // 操作当前的DOM
+import dateTimePicker from '../pages/element/dateTimePicker.vue'                                    // 日期时间选择器
+import cascader from '../pages/element/Cascader.vue'   // Cascader 级联选择器
 
 import comprehensiveStatistics from '../pages/finance/comprehensiveStatistics.vue'                                    // 综合统计
 import salesStatistics from '../pages/finance/salesStatistics.vue'                            // 销售统计
@@ -23,7 +26,7 @@ export default new Router({
       path: '/',
       name: 'index',
       component: index,
-      children:[
+      children: [
         {
           path: '/mainIndex',
           name: 'mainIndex',
@@ -60,6 +63,21 @@ export default new Router({
           component: currentDom
         },
         {
+          path: '/md5',
+          name: 'md5',
+          component: md5
+        },
+        {
+          path: '/dateTimePicker',
+          name: 'dateTimePicker',
+          component: dateTimePicker
+        },
+        {
+          path: '/cascader',
+          name: 'cascader',
+          component: cascader
+        },
+        {
           path: '/comprehensiveStatistics',
           name: 'comprehensiveStatistics',
           component: comprehensiveStatistics
@@ -85,7 +103,7 @@ export default new Router({
           component: promoterWithdrawalRecords
         },
       ],
-      redirect:'/mainIndex'
+      redirect: '/mainIndex'
     }
   ]
 })
