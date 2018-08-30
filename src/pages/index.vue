@@ -35,7 +35,7 @@
             <el-menu-item index="/dateTimePicker">日期时间选择器</el-menu-item>
             <el-menu-item index="/parentValue">组件之间传值</el-menu-item>
             <el-menu-item index="/basicOperation">基本操作</el-menu-item>
-            <el-menu-item index="/unrefreshedSearch">无刷新检索</el-menu-item>
+            <el-menu-item index="/select">选择框</el-menu-item>
             <el-menu-item index="/tabs">tabs切换效果</el-menu-item>
             <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
             <el-menu-item index="/cascader">Cascader 级联选择器</el-menu-item>
