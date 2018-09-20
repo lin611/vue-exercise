@@ -39,6 +39,7 @@
             <el-menu-item index="/tabs">tabs切换效果</el-menu-item>
             <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
             <el-menu-item index="/cascader">Cascader 级联选择器</el-menu-item>
+            <el-menu-item index="/resubmit">防重复提交</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">

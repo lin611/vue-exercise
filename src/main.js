@@ -10,7 +10,18 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
 Vue.use(ElementUI);
-
+Vue.directive('resubmit', {
+  inserted(el, binding) {
+    el.addEventListener('click', e => {
+      if(!el.disabled) {
+        el.disabled = true;
+        let timer = setTimeout( () => {
+          el.disabled = false;
+        },2000)
+      }
+    })
+  }
+});
 axios.interceptors.request.use(
   config => {
 

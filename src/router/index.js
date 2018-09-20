@@ -12,6 +12,7 @@ import md5 from '../pages/main/md5.vue'   // 操作当前的DOM
 import dateTimePicker from '../pages/element/dateTimePicker.vue'                                    // 日期时间选择器
 import cascader from '../pages/element/Cascader.vue'   // Cascader 级联选择器
 import select from '../pages/element/select.vue'   // select 选择
+import resubmit from '../pages/element/resubmit.vue'   // 防重复提交
 
 
 import comprehensiveStatistics from '../pages/finance/comprehensiveStatistics.vue'                                    // 综合统计
@@ -83,6 +84,11 @@ export default new Router({
           path: '/select',
           name: 'select',
           component: select
+        },
+        {
+          path: '/resubmit',
+          name: 'resubmit',
+          component: resubmit
         },
         {
           path: '/comprehensiveStatistics',
