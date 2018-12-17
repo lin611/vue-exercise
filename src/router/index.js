@@ -12,6 +12,8 @@ import md5 from '../pages/main/md5.vue'   // 操作当前的DOM
 import dateTimePicker from '../pages/element/dateTimePicker.vue'                                    // 日期时间选择器
 import cascader from '../pages/element/Cascader.vue'   // Cascader 级联选择器
 import select from '../pages/element/select.vue'   // select 选择
+import editor from '../pages/common/editor.vue'   // UEditor 富文本编辑器
+import handleScrollbar from '../pages/main/handleScrollbar.vue'   // 监听滚动条
 import resubmit from '../pages/element/resubmit.vue'   // 防重复提交
 
 
@@ -89,6 +91,16 @@ export default new Router({
           path: '/resubmit',
           name: 'resubmit',
           component: resubmit
+        },
+        {
+          path: '/editor',
+          name: 'editor',
+          component: editor
+        },
+        {
+          path: '/handleScrollbar',
+          name: 'handleScrollbar',
+          component: handleScrollbar
         },
         {
           path: '/comprehensiveStatistics',
