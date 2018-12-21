@@ -27,6 +27,9 @@
             <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
             <el-menu-item index="/md5">md5加密</el-menu-item>
             <el-menu-item index="/handleScrollbar">监听滚动条</el-menu-item>
+            <el-menu-item index="/parentModel">双向绑定</el-menu-item>
+            <el-menu-item index="/circulationModel">循环绑定</el-menu-item>
+
           </el-submenu>
           <el-submenu index="2">
             <template slot="title">
