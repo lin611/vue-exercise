@@ -22,6 +22,17 @@
         :value="item.value">
       </el-option>
     </el-select>
+
+    <el-select id="test"
+      v-model="value10"
+      placeholder="请选择文章标签">
+      <el-option
+        v-for="item in options5"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -50,7 +61,18 @@
           label: '北京烤鸭'
         }],
         value5: ["1", "3", "4"],
-        value11: []
+        value11: [],
+        options5: [{
+          value: 'HTML',
+          label: 'HTML'
+        }, {
+          value: 'CSS',
+          label: 'CSS'
+        }, {
+          value: 'JavaScript',
+          label: 'JavaScript'
+        }],
+        value10: []
       }
     },
     watch: {

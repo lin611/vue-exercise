@@ -17,7 +17,8 @@ import handleScrollbar from '../pages/main/handleScrollbar.vue'   // 监听滚�
 import resubmit from '../pages/element/resubmit.vue'   // 防重复提交
 import parentModel from '../pages/main/parentModel.vue'   // 双向绑定
 import circulationModel from '../pages/main/circulationModel.vue'   // 循环绑定
-
+import uploadPic from '../pages/element/uploadPic.vue'   // 上传组件
+import toast from '../pages/common/toast.vue'   // 上传组件
 import comprehensiveStatistics from '../pages/finance/comprehensiveStatistics.vue'                                    // 综合统计
 import salesStatistics from '../pages/finance/salesStatistics.vue'                            // 销售统计
 import withdrawalRecords from '../pages/finance/withdrawalRecords.vue'                                  // 提现记录
@@ -114,6 +115,11 @@ export default new Router({
           component: circulationModel
         },
         {
+          path: '/uploadPic',
+          name: 'uploadPic',
+          component: uploadPic
+        },
+        {
           path: '/comprehensiveStatistics',
           name: 'comprehensiveStatistics',
           component: comprehensiveStatistics
@@ -138,6 +144,16 @@ export default new Router({
           name: 'promoterWithdrawalRecords',
           component: promoterWithdrawalRecords
         },
+        {
+          path: '/toast',
+          name: 'toast',
+          component: toast
+        },
+          {
+              path: '/numScroll',
+              name: 'numScroll',
+              component: () => import('@/pages/main/numScroll'),
+          },
       ],
       redirect: '/mainIndex'
     }
