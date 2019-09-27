@@ -12,8 +12,13 @@ import md5 from '../pages/main/md5.vue'   // 操作当前的DOM
 import dateTimePicker from '../pages/element/dateTimePicker.vue'                                    // 日期时间选择器
 import cascader from '../pages/element/Cascader.vue'   // Cascader 级联选择器
 import select from '../pages/element/select.vue'   // select 选择
-
-
+import editor from '../pages/common/editor.vue'   // UEditor 富文本编辑器
+import handleScrollbar from '../pages/main/handleScrollbar.vue'   // 监听滚动条
+import resubmit from '../pages/element/resubmit.vue'   // 防重复提交
+import parentModel from '../pages/main/parentModel.vue'   // 双向绑定
+import circulationModel from '../pages/main/circulationModel.vue'   // 循环绑定
+import uploadPic from '../pages/element/uploadPic.vue'   // 上传组件
+import toast from '../pages/common/toast.vue'   // 上传组件
 import comprehensiveStatistics from '../pages/finance/comprehensiveStatistics.vue'                                    // 综合统计
 import salesStatistics from '../pages/finance/salesStatistics.vue'                            // 销售统计
 import withdrawalRecords from '../pages/finance/withdrawalRecords.vue'                                  // 提现记录
@@ -85,6 +90,36 @@ export default new Router({
           component: select
         },
         {
+          path: '/resubmit',
+          name: 'resubmit',
+          component: resubmit
+        },
+        {
+          path: '/editor',
+          name: 'editor',
+          component: editor
+        },
+        {
+          path: '/parentModel',
+          name: 'parentModel',
+          component: parentModel
+        },
+        {
+          path: '/handleScrollbar',
+          name: 'handleScrollbar',
+          component: handleScrollbar
+        },
+        {
+          path: '/circulationModel',
+          name: 'circulationModel',
+          component: circulationModel
+        },
+        {
+          path: '/uploadPic',
+          name: 'uploadPic',
+          component: uploadPic
+        },
+        {
           path: '/comprehensiveStatistics',
           name: 'comprehensiveStatistics',
           component: comprehensiveStatistics
@@ -109,6 +144,16 @@ export default new Router({
           name: 'promoterWithdrawalRecords',
           component: promoterWithdrawalRecords
         },
+        {
+          path: '/toast',
+          name: 'toast',
+          component: toast
+        },
+          {
+              path: '/numScroll',
+              name: 'numScroll',
+              component: () => import('@/pages/main/numScroll'),
+          },
       ],
       redirect: '/mainIndex'
     }

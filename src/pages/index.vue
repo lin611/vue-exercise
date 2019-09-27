@@ -26,6 +26,10 @@
             <el-menu-item index="/tabs">tabs切换效果</el-menu-item>
             <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
             <el-menu-item index="/md5">md5加密</el-menu-item>
+            <el-menu-item index="/handleScrollbar">监听滚动条</el-menu-item>
+            <el-menu-item index="/parentModel">双向绑定</el-menu-item>
+            <el-menu-item index="/circulationModel">循环绑定</el-menu-item>
+
           </el-submenu>
           <el-submenu index="2">
             <template slot="title">
@@ -33,12 +37,19 @@
               <span>ElementUI</span>
             </template>
             <el-menu-item index="/dateTimePicker">日期时间选择器</el-menu-item>
-            <el-menu-item index="/parentValue">组件之间传值</el-menu-item>
-            <el-menu-item index="/basicOperation">基本操作</el-menu-item>
             <el-menu-item index="/select">选择框</el-menu-item>
-            <el-menu-item index="/tabs">tabs切换效果</el-menu-item>
-            <el-menu-item index="/currentDom">操作当前的DOM</el-menu-item>
             <el-menu-item index="/cascader">Cascader 级联选择器</el-menu-item>
+            <el-menu-item index="/resubmit">防重复提交</el-menu-item>
+            <el-menu-item index="/uploadPic">上传组件</el-menu-item>
+          </el-submenu>
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-goods"></i>
+              <span slot="title">公用组件</span>
+            </template>
+            <el-menu-item index="/editor">富文本编辑器</el-menu-item>
+            <el-menu-item index="/toast">Toast</el-menu-item>
+              <el-menu-item index="/numScroll">数字滚动</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
