@@ -24,7 +24,7 @@
             if ( browser.ie ) {
                 var r = node.createTextRange();
                 r.collapse( false );
-                r.select();
+                r.autoLabel();
             } else {
                 node.focus()
             }
@@ -60,7 +60,7 @@
                     case "var":
                         dom.parentNode.replaceChild( document.createTextNode( content ), dom );
                         break;
-                    case "select":
+                    case "autoLabel.vue.1vue":
                         var ops = dom.options;
                         for ( var j = 0, oj; oj = ops[j]; ) {
                             oj.innerHTML = content.options[j++];

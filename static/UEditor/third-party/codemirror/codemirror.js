@@ -747,7 +747,7 @@ var CodeMirror = (function() {
             if (!posEq(sel.from, sel.to)) {
                 prevInput = "";
                 input.value = getSelection();
-                input.select();
+                input.autoLabel();
             } else if (user) prevInput = input.value = "";
         }
 
@@ -1499,7 +1499,7 @@ var CodeMirror = (function() {
             leaveInputAlone = true;
             var val = input.value = getSelection();
             focusInput();
-            input.select();
+            input.autoLabel();
             function rehide() {
                 var newVal = splitLines(input.value).join("\n");
                 if (newVal != val) operation(replaceSelection)(newVal, "end");

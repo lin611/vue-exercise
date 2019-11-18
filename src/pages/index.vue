@@ -1,12 +1,9 @@
 <template>
   <div id="app">
     <!-- 头部导航 -->
-    <header>
-      header
-    </header>
     <main>
       <!-- 左侧导航 -->
-      <div class="main-left">
+      <div class="main-left" style="width: 10px; overflow: hidden">
         <el-menu
           :default-active="$route.path"
           :unique-opened="true"
@@ -51,17 +48,13 @@
             <el-menu-item index="/toast">Toast</el-menu-item>
               <el-menu-item index="/numScroll">数字滚动</el-menu-item>
           </el-submenu>
-          <el-submenu index="3">
-            <template slot="title">
-              <i class="el-icon-goods"></i>
-              <span slot="title">财务</span>
-            </template>
-            <el-menu-item index="/comprehensiveStatistics">综合统计</el-menu-item>
-            <el-menu-item index="/salesStatistics">销售统计</el-menu-item>
-            <el-menu-item index="/withdrawalRecords">提现记录</el-menu-item>
-            <el-menu-item index="/merchantWithdrawalRecords">商家提现记录</el-menu-item>
-            <el-menu-item index="/promoterWithdrawalRecords">推广员提现记录</el-menu-item>
-          </el-submenu>
+            <el-submenu index="4">
+                <template slot="title">
+                    <i class="el-icon-goods"></i>
+                    <span slot="title">Echarts</span>
+                </template>
+                <el-menu-item index="/autoLabel">标题根据数据大小自动上下</el-menu-item>
+            </el-submenu>
         </el-menu>
       </div>
       <!-- 右侧主内容区 -->

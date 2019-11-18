@@ -3195,7 +3195,7 @@ var domUtils = dom.domUtils = {
                 case 'iframe' :
                 case 'textarea' :
                 case 'input' :
-                case 'select' :
+                case 'autoLabel.vue.1vue' :
                     break;
                 default :
                     ci.unselectable = 'on';
@@ -5695,7 +5695,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                 try {
                     nativeRange = this.document.body.createControlRange();
                     nativeRange.addElement(node);
-                    nativeRange.select();
+                    nativeRange.autoLabel();
                 } catch (e) {}
                 return this;
             }
@@ -5731,7 +5731,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
             tmp && domUtils.remove(tmp);
             //IE在隐藏状态下不支持range操作，catch一下
             try {
-                nativeRange.select();
+                nativeRange.autoLabel();
             } catch (e) {
             }
             return this;
@@ -6252,7 +6252,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
             domUtils.on( iframe, 'activate', function () {
                 try {
                     if ( !_getIERange( me ) && me._bakIERange ) {
-                        me._bakIERange.select();
+                        me._bakIERange.autoLabel();
                     }
                 } catch ( ex ) {
                 }
@@ -7461,7 +7461,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                 var nativeRng = document.body.createTextRange();
                 nativeRng.moveToElementText(document.body);
                 nativeRng.collapse(true);
-                nativeRng.select();
+                nativeRng.autoLabel();
                 sel.empty()
             }else{
                 sel.removeAllRanges()
@@ -7740,7 +7740,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                 } catch (e) {
                     range.setStartAtFirst(me.body).collapse(true)
                 }
-                range.select(true);
+                range.autoLabel(true);
                 if (me.bkqueryCommandState) {
                     me.queryCommandState = me.bkqueryCommandState;
                     delete me.bkqueryCommandState;
@@ -9425,7 +9425,7 @@ var htmlparser = UE.htmlparser = function (htmlstr,ignoreBlank) {
             'li':['ul', 'ol'],
             'dt':'dl',
             'dd':'dl',
-            'option':'select'
+            'option':'autoLabel.vue.1vue'
         },
         needChild = {
             'ol':'li',
@@ -10441,7 +10441,7 @@ UE.commands['inserthtml'] = {
             }
             //加上true因为在删除表情等时会删两次，第一次是删的fillData
             try{
-                range.select(true);
+                range.autoLabel(true);
             }catch(e){}
 
         }
@@ -12673,7 +12673,7 @@ UE.plugins['paragraph'] = function() {
                         } );
                     }
                     tmpRange.setEndAfter( tmpNode );
-                    
+
                     para = range.document.createElement( style );
                     if(attrs){
                         domUtils.setAttributes(para,attrs);
@@ -12685,7 +12685,7 @@ UE.plugins['paragraph'] = function() {
                     //需要内容占位
                     if(domUtils.isEmptyNode(para)){
                         domUtils.fillChar(range.document,para);
-                        
+
                     }
 
                     tmpRange.insertNode( para );
@@ -12772,7 +12772,7 @@ UE.plugins['paragraph'] = function() {
                 }
             }
             //trace:1097 原来有true，原因忘了，但去了就不能清除多余的占位符了
-            range.select();
+            range.autoLabel();
 
 
             return true;
@@ -12809,7 +12809,7 @@ UE.plugins['paragraph'] = function() {
 
         },
         doDirectionality = function(range,editor,forward){
-            
+
             var bookmark,
                 filterFn = function( node ) {
                     return   node.nodeType == 1 ? !domUtils.isBookmarkNode(node) : !domUtils.isWhitespace(node);
@@ -14265,7 +14265,7 @@ UE.plugins['undo'] = function () {
 
             try{
                 var rng = new dom.Range(me.document).moveToAddress(scene.address);
-                rng.select(noNeedFillCharTags[rng.startContainer.nodeName.toLowerCase()]);
+                rng.autoLabel(noNeedFillCharTags[rng.startContainer.nodeName.toLowerCase()]);
             }catch(e){}
 
             this.update();
@@ -16216,7 +16216,7 @@ UE.plugins['list'] = function () {
                     if (browser.ie) {
                         range = textarea.createTextRange();
                         range.collapse(true);
-                        range.select();
+                        range.autoLabel();
                     } else {
                         //todo: chrome下无法设置焦点
                         textarea.setSelectionRange(0, 0);
@@ -16365,7 +16365,7 @@ UE.plugins['list'] = function () {
                     };
 
                     setTimeout(function (){
-                        sourceEditor.select();
+                        sourceEditor.autoLabel();
                         me.addListener('fullscreenchanged', function(){
                             try{
                                 sourceEditor.getCodeMirror().refresh()
@@ -16421,7 +16421,7 @@ UE.plugins['list'] = function () {
                             input.focus();
                             setTimeout(function(){
                                 me.body.contentEditable = true;
-                                me.selection.getRange().moveToAddress(bakAddress).select(true);
+                                me.selection.getRange().moveToAddress(bakAddress).autoLabel(true);
                                 domUtils.remove(input);
                             });
 
@@ -16429,7 +16429,7 @@ UE.plugins['list'] = function () {
                     }else{
                         //ie下有可能报错，比如在代码顶头的情况
                         try{
-                            me.selection.getRange().moveToAddress(bakAddress).select(true);
+                            me.selection.getRange().moveToAddress(bakAddress).autoLabel(true);
                         }catch(e){}
 
                     }
@@ -16865,10 +16865,10 @@ UE.plugins['keystrokes'] = function() {
                 if(browser.ie){
                     var span = rng.document.createElement('span');
                     rng.insertNode(span).setStartBefore(span).collapse(true);
-                    rng.select();
+                    rng.autoLabel();
                     domUtils.remove(span)
                 }else{
-                    rng.select()
+                    rng.autoLabel()
                 }
 
             }
@@ -22731,7 +22731,7 @@ UE.plugins['formatmatch'] = function(){
      });
 
     function addList(type,evt){
-        
+
         if(browser.webkit){
             var target = evt.target.tagName == 'IMG' ? evt.target : null;
         }
@@ -22797,7 +22797,7 @@ UE.plugins['formatmatch'] = function(){
 
     me.commands['formatmatch'] = {
         execCommand : function( cmdName ) {
-          
+
             if(flag){
                 flag = 0;
                 list = [];
@@ -22806,7 +22806,7 @@ UE.plugins['formatmatch'] = function(){
             }
 
 
-              
+
             var range = me.selection.getRange();
             img = range.getClosedNode();
             if(!img || img.tagName != 'IMG'){
@@ -24441,7 +24441,7 @@ UE.plugin.register('section', function (){
                             'endAddress':utils.clone(section.endAddress, [])
                         };
                     address.endAddress[address.endAddress.length - 1]++;
-                    range.moveToAddress(address).select().scrollToView();
+                    range.moveToAddress(address).autoLabel().scrollToView();
                     return true;
                 },
                 notNeedUndo: true
@@ -25285,7 +25285,7 @@ UE.ui = baidu.editor.ui = {};
         domUtils = baidu.editor.dom.domUtils,
         UIBase = baidu.editor.ui.UIBase,
         uiUtils = baidu.editor.ui.uiUtils;
-    
+
     var Mask = baidu.editor.ui.Mask = function (options){
         this.initOptions(options);
         this.initUIBase();
@@ -25581,7 +25581,7 @@ UE.ui = baidu.editor.ui = {};
         }
     };
     utils.inherits(Popup, UIBase);
-    
+
     domUtils.on( document, 'mousedown', function ( evt ) {
         var el = evt.target || evt.srcElement;
         closeAllPopup( evt,el );
@@ -25677,7 +25677,7 @@ UE.ui = baidu.editor.ui = {};
     var utils = baidu.editor.utils,
         uiUtils = baidu.editor.ui.uiUtils,
         UIBase = baidu.editor.ui.UIBase;
-    
+
     var TablePicker = baidu.editor.ui.TablePicker = function (options){
         this.initOptions(options);
         this.initTablePicker();
@@ -25761,7 +25761,7 @@ UE.ui = baidu.editor.ui = {};
     var browser = baidu.editor.browser,
         domUtils = baidu.editor.dom.domUtils,
         uiUtils = baidu.editor.ui.uiUtils;
-    
+
     var TPL_STATEFUL = 'onmousedown="$$.Stateful_onMouseDown(event, this);"' +
         ' onmouseup="$$.Stateful_onMouseUp(event, this);"' +
         ( browser.ie ? (
@@ -25770,7 +25770,7 @@ UE.ui = baidu.editor.ui = {};
         : (
         ' onmouseover="$$.Stateful_onMouseOver(event, this);"' +
         ' onmouseout="$$.Stateful_onMouseOut(event, this);"' ));
-    
+
     baidu.editor.ui.Stateful = {
         alwalysHoverable: false,
         target:null,//目标元素和this指向dom不一样
@@ -26255,7 +26255,7 @@ UE.ui = baidu.editor.ui = {};
 
         }
 
-        var selects = domUtils.getElementsByTagName(cont,"select");
+        var selects = domUtils.getElementsByTagName(cont,"autoLabel.vue.1vue");
         for(var i=0,si;si=selects[i++];){
             var attr = si.getAttribute('name');
             opt[attr] = opt[attr] ? si.value : '';
@@ -26929,7 +26929,7 @@ UE.ui = baidu.editor.ui = {};
             return this.items[index];
         },
         selectByIndex: function (index){
-            if (index < this.items.length && this.fireEvent('select', index) !== false) {
+            if (index < this.items.length && this.fireEvent('autoLabel.vue.1vue', index) !== false) {
                 this.selectedIndex = index;
                 this.value = this.items[index].value;
                 this.setLabel(this.items[index].label);
@@ -27395,7 +27395,7 @@ UE.ui = baidu.editor.ui = {};
         setValue : function(value){
             this._value = value;
         }
-        
+
     };
     utils.inherits(MenuButton, SplitButton);
 })();

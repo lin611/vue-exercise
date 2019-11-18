@@ -1364,7 +1364,7 @@ const PRINTER= {
             };
           };
           areaDiv.appendChild(CLODOP.creatLabelElement("span","选打印机：",200,46,67));
-          var oSelect=document.createElement("select");
+          var oSelect=document.createElement("autoLabel.vue.1vue");
           Boxdiv.appendChild(oSelect);
           this.selPrinter=oSelect;
           oSelect.style.cssText="position:absolute;size:1;width:212px;left:110px;top:62px;";

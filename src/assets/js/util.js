@@ -62,6 +62,54 @@ const utils = {
     return time;
   },
 
+    // 数组比较大小显示上下标题
+    labelPositionSort(arrOne, arrTwo) {
+        let newArr = [];
+        let newArr1 = [];
+        let newArr2 = [];
+        for (let i in arrOne) {
+            for (let k in arrTwo) {
+                if (i === k) {
+                    if (parseInt(arrOne[i]) >= parseInt(arrTwo[k])) {
+                        newArr1.push({
+                            value: arrOne[i],
+                            label: {
+                                show: true,
+                                position: 'top'
+                            }
+                        });
+                        newArr2.push({
+                            value: arrTwo[k],
+                            label: {
+                                show: true,
+                                position: 'bottom'
+                            }
+                        });
+                    } else {
+                        newArr1.push({
+                            value: arrOne[i],
+                            label: {
+                                show: true,
+                                position: 'bottom'
+                            }
+                        });
+                        newArr2.push({
+                            value: arrTwo[k],
+                            label: {
+                                show: true,
+                                position: 'top'
+                            }
+                        });
+                    }
+
+                }
+            }
+        }
+        // console.log(newArr1)
+        // console.log(newArr2)
+        newArr = [newArr1, newArr2];
+        return newArr
+    }
 };
 
 export default utils;

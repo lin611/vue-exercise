@@ -19,11 +19,7 @@ import parentModel from '../pages/main/parentModel.vue'   // 双向绑定
 import circulationModel from '../pages/main/circulationModel.vue'   // 循环绑定
 import uploadPic from '../pages/element/uploadPic.vue'   // 上传组件
 import toast from '../pages/common/toast.vue'   // 上传组件
-import comprehensiveStatistics from '../pages/finance/comprehensiveStatistics.vue'                                    // 综合统计
-import salesStatistics from '../pages/finance/salesStatistics.vue'                            // 销售统计
-import withdrawalRecords from '../pages/finance/withdrawalRecords.vue'                                  // 提现记录
-import merchantWithdrawalRecords from '../pages/finance/merchantWithdrawalRecords.vue'                                  // 商家提现记录
-import promoterWithdrawalRecords from '../pages/finance/promoterWithdrawalRecords.vue'                        // 推广员提现记录
+
 
 Vue.use(Router)
 
@@ -120,31 +116,6 @@ export default new Router({
           component: uploadPic
         },
         {
-          path: '/comprehensiveStatistics',
-          name: 'comprehensiveStatistics',
-          component: comprehensiveStatistics
-        },
-        {
-          path: '/salesStatistics',
-          name: 'salesStatistics',
-          component: salesStatistics
-        },
-        {
-          path: '/withdrawalRecords',
-          name: 'withdrawalRecords',
-          component: withdrawalRecords
-        },
-        {
-          path: '/merchantWithdrawalRecords',
-          name: 'merchantWithdrawalRecords',
-          component: merchantWithdrawalRecords
-        },
-        {
-          path: '/promoterWithdrawalRecords',
-          name: 'promoterWithdrawalRecords',
-          component: promoterWithdrawalRecords
-        },
-        {
           path: '/toast',
           name: 'toast',
           component: toast
@@ -153,6 +124,11 @@ export default new Router({
               path: '/numScroll',
               name: 'numScroll',
               component: () => import('@/pages/main/numScroll'),
+          },
+          {
+              path: '/autoLabel', //标题根据数据大小自动上下
+              name: 'autoLabel',
+              component: () => import('@/pages/echarts/autoLabel'),
           },
       ],
       redirect: '/mainIndex'
